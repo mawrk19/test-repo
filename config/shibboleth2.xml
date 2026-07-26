@@ -1,0 +1,8 @@
+<Configuration>
+  <ApplicationDefaults entityID="https://your-entity-id.com"/>
+  <SSO entityID="https://your-entity-id.com">
+    <Host name="your-host-name.com">
+      <Path name="/" authType="shibboleth"/>
+    </Host>
+  </SSO>
+</Configuration>
