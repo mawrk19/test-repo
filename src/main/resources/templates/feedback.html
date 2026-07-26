@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Student Feedback Form</title>
+</head>
+<body>
+    <h1>Student Feedback Form</h1>
+    <form action="/feedback" method="post" th:object="${feedbackForm}">
+        <div>
+            <label for="studentId">Student ID:</label>
+            <input type="text" id="studentId" th:field="*{studentId}">
+        </div>
+        <div>
+            <label for="coOpExperience">Co-op Experience:</label>
+            <input type="text" id="coOpExperience" th:field="*{coOpExperience}">
+        </div>
+        <div>
+            <label for="feedbackText">Feedback Text:</label>
+            <textarea id="feedbackText" th:field="*{feedbackText}"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Submit Feedback">
+        </div>
+    </form>
+</body>
+</html>
