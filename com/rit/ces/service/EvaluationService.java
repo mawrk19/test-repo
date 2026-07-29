@@ -1,32 +1,19 @@
 package com.rit.ces.service;
 
 import com.rit.ces.model.Evaluation;
-import com.rit.ces.model.EvaluationStatus;
 import com.rit.ces.repository.EvaluationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class EvaluationService {
-
-    private final EvaluationRepository evaluationRepository;
-
     @Autowired
-    public EvaluationService(EvaluationRepository evaluationRepository) {
-        this.evaluationRepository = evaluationRepository;
-    }
+    private EvaluationRepository evaluationRepository;
 
-    public List<Evaluation> getAllEvaluations() {
-        return evaluationRepository.findAll();
-    }
+    public void submitEvaluation(Evaluation evaluation) {
+        // Existing logic
 
-    public Evaluation getEvaluationById(Long id) {
-        return evaluationRepository.findById(id).orElse(null);
-    }
-
-    public void updateEvaluation(Evaluation evaluation) {
+        // Add EWA Student Development Guidelines and RIT Web Standards adherence
         evaluationRepository.save(evaluation);
     }
 }
