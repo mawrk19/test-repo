@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Evaluations</title>
+</head>
+<body>
+    <h1>Evaluations</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="evaluation : ${evaluations}">
+            <td th:text="${evaluation.id}"></td>
+            <td th:text="${evaluation.status}"></td>
+            <td>
+                <form th:action="@{/admin/evaluations/{id}/status(id=${evaluation.id})}" method="post">
+                    <select name="status">
+                        <option th:value="MANUALLY_COMPLETED" th:text="Manually Completed"></option>
+                        <option th:value="ARCHIVED" th:text="Archived"></option>
+                    </select>
+                    <input type="submit" value="Update Status"/>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
